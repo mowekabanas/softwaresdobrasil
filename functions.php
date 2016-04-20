@@ -425,8 +425,8 @@ add_action('init', 'type_post_noticias');
 function type_post_noticias() {
 
 	$labels = array(
-		'name' => _x('Notícias', 'post type general name'),
-		'singular_name' => _x('Notícia', 'post type singular name'),
+		'name' => _x('Softwares', 'post type general name'),
+		'singular_name' => _x('Software', 'post type singular name'),
 		'add_new' => _x('Adicionar Novo', 'Novo item'),
 		'add_new_item' => __('Novo Item'),
 		'edit_item' => __('Editar Item'),
@@ -471,5 +471,5 @@ register_taxonomy(
 );
 
 function noticias_meta_box(){
-	add_meta_box('meta_box_test', __('Meta Box'), 'meta_box_meta_test', 'noticias', 'side', 'high');
+	add_meta_box('meta_box_test', __('Meta Box'), 'meta_box_meta_test', 'softwares', 'side', 'high');
 }
