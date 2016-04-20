@@ -418,11 +418,12 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	$args['unit'] = 'em';
 	return $args;
 }
+
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
-add_action('init', 'type_post_noticias');
+add_action('init', 'type_post_softwares');
 
-function type_post_noticias() {
+function type_post_softwares() {
 
 	$labels = array(
 		'name' => _x('Softwares', 'post type general name'),
@@ -436,7 +437,7 @@ function type_post_noticias() {
 		'not_found' =>  __('Nenhum registro encontrado'),
 		'not_found_in_trash' => __('Nenhum registro encontrado na lixeira'),
 		'parent_item_colon' => '',
-		'menu_name' => 'Notícias'
+		'menu_name' => 'Softwares'
 	);
 
 	$args = array(
@@ -450,18 +451,20 @@ function type_post_noticias() {
 		'has_archive' => true,
 		'hierarchical' => false,
 		'menu_position' => null,
-		'register_meta_box_cb' => 'noticias_meta_box',
+		'register_meta_box_cb' => 'softwares_meta_box',
+		'show_in_nav_menus' => true,
+		'menu_position' => 3,
 		'supports' => array('title','editor','thumbnail','comments', 'excerpt', 'custom-fields', 'revisions', 'trackbacks')
 	);
 
-	register_post_type( 'noticias' , $args );
+	register_post_type( 'softwares' , $args );
 	flush_rewrite_rules();
 
 }
 
 register_taxonomy(
 	"categorias",
-	"noticias",
+	"softwares",
 	array(
 		"label" => "Categorias",
 		"singular_label" => "Categoria",
@@ -470,6 +473,7 @@ register_taxonomy(
 	)
 );
 
-function noticias_meta_box(){
+function softwares_meta_box(){
 	add_meta_box('meta_box_test', __('Meta Box'), 'meta_box_meta_test', 'softwares', 'side', 'high');
 }
+

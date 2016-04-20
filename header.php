@@ -29,6 +29,8 @@
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main">
 				<div class="site-branding">
+
+					<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="" width="xxx" height="xxx" />
 					<?php twentysixteen_the_custom_logo(); ?>
 
 					<?php if ( is_front_page() && is_home() ) : ?>
