@@ -30,19 +30,14 @@
 			<div class="site-header-main">
 				<div class="site-branding">
 
-					<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="" width="xxx" height="xxx" />
-					<?php twentysixteen_the_custom_logo(); ?>
 
 					<?php if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="" width="xxx" height="xxx" />
 					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif;
-
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; ?></p>
+						<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="" width="xxx" height="xxx" />
 					<?php endif; ?>
+
+
 				</div><!-- .site-branding -->
 
 				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>

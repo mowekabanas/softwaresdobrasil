@@ -421,9 +421,14 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
-add_action('init', 'type_post_softwares');
+/*
+ * SOFTWARE POST TYPE
+ */
 
-function type_post_softwares() {
+/**
+ * Add Software Post Type
+ */
+function software_post_type() {
 
 	$labels = array(
 		'name' => _x('Softwares', 'post type general name'),
@@ -462,18 +467,72 @@ function type_post_softwares() {
 
 }
 
-register_taxonomy(
-	"categorias",
-	"softwares",
-	array(
-		"label" => "Categorias",
-		"singular_label" => "Categoria",
-		"rewrite" => true,
-		"hierarchical" => true
-	)
-);
+/*
+ * Add Taxonomies
+ */
 
-function softwares_meta_box(){
+/**
+ * Add Software Categories Taxonomy
+ */
+function software_categories() {
+
+	$labels = array(
+		'name' => _x( 'Categorias de Software', 'taxonomy general name' ),
+		'singular_name' => _x( 'Categoria de Software', 'taxonomy singular name' ),
+		'search_items' => __( 'Buscar por Categorias de Software' ),
+		'all_items' => __( 'Categorias de Software' ),
+		'parent_item' => __( 'Categoria Pai' ),
+		'parent_item_colon' => __( 'Categoria Pai:' ),
+		'edit_item' => __( 'Editar Categoria de Software' ),
+		'update_item' => __( 'Atualizar Categoria de Software' ),
+		'add_new_item' => __( 'Adicionar nova Categoria' ),
+		'new_item_name' => __( 'Nova Categoria' ),
+		'menu_name' => __( 'Categorias' ),
+	);
+
+	$args = array(
+		'labels' => $labels,
+		'hierarchical' => true,
+	);
+
+	register_taxonomy( 'softwares_category', 'softwares', $args );
+
+}
+
+/**
+ * Add Software Developers Taxonomy
+ */
+function software_developers() {
+
+	$labels = array(
+		'name' => _x( 'Desenvolvedores de Software', 'taxonomy general name' ),
+		'singular_name' => _x( 'Desenvolvedor de Software', 'taxonomy singular name' ),
+		'search_items' => __( 'Buscar por Desenvolvedores de Software' ),
+		'all_items' => __( 'Desenvolvedores de Software' ),
+		'parent_item' => __( 'Desenvolvedor Pai' ),
+		'parent_item_colon' => __( 'Desenvolvedor Pai:' ),
+		'edit_item' => __( 'Editar Desenvolvedor de Software' ),
+		'update_item' => __( 'Atualizar Desenvolvedor de Software' ),
+		'add_new_item' => __( 'Adicionar nova Desenvolvedor' ),
+		'new_item_name' => __( 'Nova Desenvolvedor' ),
+		'menu_name' => __( 'Desenvolvedores' ),
+	);
+
+	$args = array(
+		'labels' => $labels,
+		'hierarchical' => true,
+	);
+
+	register_taxonomy( 'softwares_developers', 'softwares', $args );
+
+}
+
+// INIT THE SOFTARE POST TYPE
+add_action('init', 'software_post_type');
+add_action( 'init', 'software_categories', 0 );
+add_action( 'init', 'software_developers', 0 );
+
+function softwares_meta_box() {
 	add_meta_box('meta_box_test', __('Meta Box'), 'meta_box_meta_test', 'softwares', 'side', 'high');
 }
 
