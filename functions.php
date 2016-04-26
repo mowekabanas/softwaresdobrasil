@@ -528,11 +528,58 @@ function software_developers() {
 }
 
 // INIT THE SOFTARE POST TYPE
-add_action('init', 'software_post_type');
+add_action( 'init', 'software_post_type' );
 add_action( 'init', 'software_categories', 0 );
 add_action( 'init', 'software_developers', 0 );
 
-function softwares_meta_box() {
-	add_meta_box('meta_box_test', __('Meta Box'), 'meta_box_meta_test', 'softwares', 'side', 'high');
+add_action( 'add_meta_boxes', 'software_price_box' );
+
+function software_price_box() {
+
+	$screens = array( 'post', 'page' );
+
+		add_meta_box(
+			'software_price_box',
+			__( 'Custo', 'software_price' ),
+			'software_price_box_content',
+			'softwares',
+			'side',
+			'high'
+		);
+
 }
 
+function software_price_box_content( $post ) {
+
+	// Faz a verificação através do nonce
+	wp_nonce_field( plugin_basename( __FILE__ ), 'software_price_box_content_nonce' );
+
+	$value = get_post_meta( $post->ID, 'software_price', true );
+
+	echo '<label for="software_price"></label>';
+	echo '<input type="text" id="software_price" name="software_price" value="' . esc_attr($value) . '"/>';
+
+}
+
+add_action( 'save_post', 'software_price_box_save' );
+
+function software_price_box_save( $post_id ) {
+
+	if ( defined( 'DOING_AUTOSAVE' ) == DOING_AUTOSAVE )
+		return;
+
+	if ( !wp_verify_nonce( $_POST['software_price_box_content_nonce'], plugin_basename( __FILE__ ) ) )
+		return;
+
+	if ( 'page' == $_POST['post_type'] ) {
+	  if ( !current_user_can( 'edit_page', $post_id ) )
+		  return;
+	} else {
+	  if ( !current_user_can( 'edit_post', $post_id ) )
+		  return;
+	}
+
+	$software_price = $_POST['software_price'];
+	update_post_meta( $post_id, 'software_price', $software_price );
+
+}

@@ -94,3 +94,22 @@
 		</header><!-- .site-header -->
 
 		<div id="content" class="site-content">
+
+
+			<?php
+
+				$newsArgs = array( 'post_type' => 'softwares', 'posts_per_page' => 4);
+
+				$newsLoop = new WP_Query( $newsArgs );
+
+				while ( $newsLoop->have_posts() ) : $newsLoop->the_post();              ?>
+				<div class="news">
+					<header class="entry-header">
+						<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+					</header>
+					<p><?php the_content(); ?></p>
+					<p><?php echo get_the_term_list( $post->ID, 'softwares_category', 'Categorias: ', ' '); ?></p>
+					<p>Retornando o campo personalizado: <?php echo get_post_meta($post->ID, 'valor_meta', true); ?></p>
+				</div>
+
+			<?php endwhile; ?>
