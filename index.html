@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+<meta charset="UTF-8">
+<title>Softwares do Brasil</title>
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<script src="dist/js/villa.min.js"></script>
+<link rel="stylesheet" href="dist/css/villa.min.css"/>
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
+<link rel="stylesheet" type="text/css" href="dist/css/villa-cross.min.css"/>
+<script src="dist/js/html5shiv.js"></script>
+<script src="dist/js/html5shiv-printshiv.js"></script>
+<script src="dist/js/classList.min.js"></script>
+<![endif]-->
+
+<style>
+
+	/* Header */
+
+	.Header {
+		width: 12em;
+		position: fixed;
+		height: 100vh;
+		overflow-x: hidden;
+		overflow-y: auto;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
+
+	.HeaderLogo {
+		display: flex;
+		height: 6em;
+	}
+
+	.HeaderLogo .Logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.HeaderLogo .Logo img {
+		display: block;
+		max-height: 3.75em;
+	}
+
+	.HeaderMenu {
+		display: flex;
+		flex-flow: column;
+	}
+
+	.HeaderMenuItem {
+		display: flex;
+	}
+
+	.HeaderMenuItem-select-area {
+		align-items: center;
+		display: flex;
+		border-bottom: solid 1px #eeeeee;
+		padding: 1.3125em 0 1.5em 1.5em;
+		width: 100%;
+	}
+
+	.HeaderMenuItem:first-of-type .HeaderMenuItem-select-area {
+		border-top: solid 1px #eeeeee;
+	}
+
+	.HeaderMenuItem-select-area:hover {
+		background-color: #eeeeee;
+	}
+
+	.HeaderMenuItem-title {
+		color: #616161;
+		font-size: 1.3125em;
+	}
+
+	/* Main */
+
+	.Main {
+		top: 0;
+		left: 0;
+		position: relative;
+		padding-left: 12em;
+		width: 100%;
+	}
+
+	.Main-background {
+		top: 0;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.Main-inner {
+		top: 0;
+		left: 0;
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+	}
+
+	.MainNav {
+		padding-top: 6em;
+		position: fixed;
+		width: 16em;
+		height: 100vh;
+		z-index: 1;
+	}
+
+	.MainMenu {
+		display: flex;
+		flex-flow: column;
+		width: 100%;
+		height: 100%;
+		padding-top: .5em;
+	}
+
+	.MainSubMenu {
+		display: flex;
+		flex-flow: column;
+		margin-bottom: 2.25em;
+	}
+
+	.MainMenuItem-select-area,
+	.MainSubMenuItem-select-area {
+		display: flex;
+		padding: .375em 0 .5em 3em;
+	}
+
+	.MainMenuItem-select-area:hover,
+	.MainSubMenuItem-select-area:hover {
+		background-color: #ffff00;
+	}
+
+	.MainMenuItem-select-area {
+		border-bottom: solid 1px transparent;
+	}
+
+	.MainMenuItem:hover .MainMenuItem-select-area {
+		border-bottom: solid 1px #bdbdbd;
+	}
+
+	.MainMenuItem-title,
+	.MainSubMenuItem-title {
+		line-height: 1;
+		font-size: 1.3125em;
+	}
+
+	.MainMenuItem-title {
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	/* Main Search Hold */
+
+	.MainSearchHold {
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		padding-left: 16em;
+	}
+
+	.MainSearchHold-inner {
+		padding: 6em 0 0;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 48em;
+	}
+
+	.MainSearchField {
+		background-color: #ffffff;
+		border: solid 1px #616161;
+		padding: 1.5em 1.5em;
+		width: 100%;
+	}
+
+	.MainSearchField label {
+		display: none;
+	}
+
+	.MainSearchInput {
+		border: none;
+		font-size: 1.5em;
+		border-radius: 0;
+		width: 100%;
+	}
+
+	.MainSearchResults {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	.MainSearchResultsItem {
+		margin: 1em;
+		background-color: #ffffff;
+		padding: 1em;
+		display: flex;
+		flex-flow: row;
+		max-width: 16em;
+		width: 100%;
+	}
+
+</style>
+
+<body class="grey-100">
+
+<header class="Header white">
+
+	<div class="HeaderLogo grey-200">
+
+		<div class="Logo Logo--header">
+
+			<img src="img/logo.png" alt="">
+			
+		</div>
+
+	</div>
+
+	<nav class="HeaderNav">
+
+		<ul class="HeaderMenu">
+
+			<li class="HeaderMenuItem">
+
+				<a href="#" class="HeaderMenuItem-select-area">
+
+					<span class="HeaderMenuItem-title">Softwares</span>
+
+				</a>
+
+			</li>
+
+			<li class="HeaderMenuItem">
+
+				<a href="#" class="HeaderMenuItem-select-area">
+
+					<span class="HeaderMenuItem-title">Serviços</span>
+
+				</a>
+
+			</li>
+
+			<li class="HeaderMenuItem">
+
+				<a href="#" class="HeaderMenuItem-select-area">
+
+					<span class="HeaderMenuItem-title">Sobre</span>
+
+				</a>
+
+			</li>
+
+		</ul>
+
+	</nav>
+
+</header>
+
+<main class="Main">
+
+	<div class="Main-background grey-200"></div>
+	<div class="Main-inner">
+
+		<nav class="MainNav">
+			
+			<ul class="MainMenu">
+
+				<li class="MainMenuItem">
+
+					<a href="#" class="MainMenuItem-select-area">
+
+						<span class="MainMenuItem-title">PDV</span>
+
+					</a>
+
+					<ul class="MainSubMenu">
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Varejo</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Moda</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Atacado</span>
+
+							</a>
+
+						</li>
+
+
+					</ul>
+
+				</li>
+
+				<li class="MainMenuItem">
+
+					<a href="#" class="MainMenuItem-select-area">
+
+						<span class="MainMenuItem-title">Saúde</span>
+
+					</a>
+
+				</li>
+
+				<li class="MainMenuItem">
+
+					<a href="#" class="MainMenuItem-select-area">
+
+						<span class="MainMenuItem-title">Industria</span>
+
+					</a>
+
+					<ul class="MainSubMenu">
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Agroindustria</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Manufatura</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Alimenticio</span>
+
+							</a>
+
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="MainMenuItem">
+
+					<a href="#" class="MainMenuItem-select-area">
+
+						<span class="MainMenuItem-title">Serviços</span>
+
+					</a>
+
+					<ul class="MainSubMenu">
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Mecânica</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Jurídico</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Arquitetura</span>
+
+							</a>
+
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="MainMenuItem">
+
+					<a href="#" class="MainMenuItem-select-area">
+
+						<span class="MainMenuItem-title">Logística</span>
+
+					</a>
+
+					<ul class="MainSubMenu">
+
+						<li class="MainSubMenuItem"></li>
+
+					</ul>
+
+				</li>
+				
+			</ul>
+			
+		</nav>
+
+		<div class="MainSearchHold">
+
+			<div class="MainSearchHold-inner">
+
+				<div class="MainSearchField">
+
+					<label for="MainSearchInput"></label>
+					<input type="text" id="MainSearchInput" class="MainSearchInput" placeholder="Digite um tipo de software para ser localizado">
+
+				</div>
+
+				<div class="MainSearchResults">
+
+					<div class="MainSearchResultsItem">
+
+						<header></header>
+
+						<div class="MainSearchResultsItem-content">
+
+							<h4 class="MainSearchResultsItem-title">Kabanas K1</h4>
+
+							<p class="MainSearchResultsItem-title">Kabanas K1 é um software beta para gerenciamento comercial</p>
+
+						</div>
+
+					</div>
+
+					<div class="MainSearchResultsItem">
+
+						<header></header>
+
+						<div class="MainSearchResultsItem-content">
+
+							<h4 class="MainSearchResultsItem-title">Kabanas K1</h4>
+
+							<p class="MainSearchResultsItem-title">Kabanas K1 é um software beta para gerenciamento comercial</p>
+
+						</div>
+
+					</div>
+
+					<div class="MainSearchResultsItem">
+
+						<header></header>
+
+						<div class="MainSearchResultsItem-content">
+
+							<h4 class="MainSearchResultsItem-title">Kabanas K1</h4>
+
+							<p class="MainSearchResultsItem-title">Kabanas K1 é um software beta para gerenciamento comercial</p>
+
+						</div>
+
+					</div>
+
+					<div class="MainSearchResultsItem">
+
+						<header></header>
+
+						<div class="MainSearchResultsItem-content">
+
+							<h4 class="MainSearchResultsItem-title">Kabanas K1</h4>
+
+							<p class="MainSearchResultsItem-title">Kabanas K1 é um software beta para gerenciamento comercial</p>
+
+						</div>
+
+					</div>
+
+					<div class="MainSearchResultsItem">
+
+						<header></header>
+
+						<div class="MainSearchResultsItem-content">
+
+							<h4 class="MainSearchResultsItem-title">Kabanas K1</h4>
+
+							<p class="MainSearchResultsItem-title">Kabanas K1 é um software beta para gerenciamento comercial</p>
+
+						</div>
+
+					</div>
+
+					<div class="MainSearchResultsItem">
+
+						<header></header>
+
+						<div class="MainSearchResultsItem-content">
+
+							<h4 class="MainSearchResultsItem-title">Kabanas K1</h4>
+
+							<p class="MainSearchResultsItem-title">Kabanas K1 é um software beta para gerenciamento comercial</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</main>
+
+</body>
+
+</html>
