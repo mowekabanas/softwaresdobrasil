@@ -1,0 +1,126 @@
+/* Main */
+
+.Main {
+	top: 0;
+	left: 0;
+	position: relative;
+	padding-left: 12em;
+	width: 100%;
+}
+
+.Main-background {
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.Main-inner {
+	top: 0;
+	left: 0;
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.MainNav {
+	padding-top: 6em;
+	position: fixed;
+	width: 16em;
+	height: 100vh;
+	z-index: 1;
+}
+
+.MainMenu {
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+	height: 100%;
+	padding-top: .5em;
+}
+
+.MainSubMenu {
+	display: flex;
+	flex-flow: column;
+	margin-bottom: 2.25em;
+}
+
+.MainMenuItem-select-area,
+.MainSubMenuItem-select-area {
+	display: flex;
+	padding: .375em 0 .5em 3em;
+}
+
+.MainMenuItem-select-area:hover,
+.MainSubMenuItem-select-area:hover {
+	background-color: #ffff00;
+}
+
+.MainMenuItem-select-area {
+	border-bottom: solid 1px transparent;
+}
+
+.MainMenuItem:hover .MainMenuItem-select-area {
+	border-bottom: solid 1px #bdbdbd;
+}
+
+.MainMenuItem-title,
+.MainSubMenuItem-title {
+	line-height: 1;
+	font-size: 1.3125em;
+}
+
+.MainMenuItem-title {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+/* Main Search Hold */
+
+.MainSearchHold {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	padding-left: 16em;
+}
+
+.MainSearchHold-inner {
+	padding: 6em 0 0;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 48em;
+}
+
+.MainSearchField {
+	background-color: #ffffff;
+	border: solid 1px #616161;
+	padding: 1.5em 1.5em;
+	width: 100%;
+}
+
+.MainSearchField label {
+	display: none;
+}
+
+.MainSearchInput {
+	border: none;
+	font-size: 1.5em;
+	border-radius: 0;
+	width: 100%;
+}
+
+.MainSearchResults {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.MainSearchResultsItem {
+	margin: 1em;
+	background-color: #ffffff;
+	padding: 1em;
+	display: flex;
+	flex-flow: row;
+	max-width: 16em;
+	width: 100%;
+}

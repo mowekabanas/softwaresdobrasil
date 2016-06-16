@@ -86,11 +86,13 @@ dist.js = {
 gulp.task('css', function() {
 	gulp.src(source.css.location + source.css.content)
 		.pipe(concatCSS(_PROJECTNAME + '.css'))
+		.pipe(gulp.dest('/var/www/softwaresdobrasil/wp-content/themes/twentysixteen/dist/css'))
 		.pipe(gulp.dest(dist.css.location))
 		.pipe(cleanCSS())
 		.pipe(rename({
 			extname: '.min.css'
 		}))
+		.pipe(gulp.dest('/var/www/softwaresdobrasil/wp-content/themes/twentysixteen/dist/css'))
 		.pipe(gulp.dest(dist.css.location));
 });
 

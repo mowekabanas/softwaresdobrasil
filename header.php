@@ -10,106 +10,254 @@
  */
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<?php endif; ?>
-	<?php wp_head(); ?>
-</head>
+<html <?php language_attributes(); ?> class="no-js roboto">
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<script src="<?php echo get_template_directory_uri() ?>/dist/js/villa.min.js"></script>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php endif; ?>
+<?php wp_head(); ?>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<div class="site-inner">
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
+<body class="grey">
 
-		<header id="masthead" class="site-header" role="banner">
-			<div class="site-header-main">
-				<div class="site-branding">
+<header class="Header white">
 
+	<div class="HeaderLogo grey-200">
 
-					<?php if ( is_front_page() && is_home() ) : ?>
-						<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="" width="xxx" height="xxx" />
-					<?php else : ?>
-						<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="" width="xxx" height="xxx" />
-					<?php endif; ?>
+		<div class="Logo Logo--header">
 
+			<img src="<?php echo get_template_directory_uri() ?>/img/logo.png" alt="">
 
-				</div><!-- .site-branding -->
+		</div>
 
-				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
-					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
+	</div>
 
-					<div id="site-header-menu" class="site-header-menu">
-						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'primary',
-										'menu_class'     => 'primary-menu',
-									 ) );
-								?>
-							</nav><!-- .main-navigation -->
-						<?php endif; ?>
+	<nav class="HeaderNav">
 
-						<?php if ( has_nav_menu( 'social' ) ) : ?>
-							<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentysixteen' ); ?>">
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'social',
-										'menu_class'     => 'social-links-menu',
-										'depth'          => 1,
-										'link_before'    => '<span class="screen-reader-text">',
-										'link_after'     => '</span>',
-									) );
-								?>
-							</nav><!-- .social-navigation -->
-						<?php endif; ?>
-					</div><!-- .site-header-menu -->
-				<?php endif; ?>
-			</div><!-- .site-header-main -->
+		<ul class="HeaderMenu">
 
-			<?php if ( get_header_image() ) : ?>
-				<?php
-					/**
-					 * Filter the default twentysixteen custom header sizes attribute.
-					 *
-					 * @since Twenty Sixteen 1.0
-					 *
-					 * @param string $custom_header_sizes sizes attribute
-					 * for Custom Header. Default '(max-width: 709px) 85vw,
-					 * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
-					 */
-					$custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
-				?>
-				<div class="header-image">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+			<li class="HeaderMenuItem">
+
+				<a href="<?php echo get_home_url(); ?>" class="HeaderMenuItem-select-area">
+
+					<span class="HeaderMenuItem-title">Softwares</span>
+
+				</a>
+
+			</li>
+
+			<li class="HeaderMenuItem">
+
+				<a href="#" class="HeaderMenuItem-select-area">
+
+					<span class="HeaderMenuItem-title">Sobre</span>
+
+				</a>
+
+			</li>
+
+		</ul>
+
+	</nav>
+
+</header>
+
+<main class="Main">
+
+	<div class="Main-background grey-200"></div>
+
+	<div class="Main-inner">
+
+		<nav class="MainNav" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentysixteen' ); ?>">
+
+			<?php if ( has_nav_menu( 'main' ) ) : ?>
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'main',
+						'depth'          => 1,
+						'link_before'    => '<span class="MainMenuItem-title">',
+						'link_after'     => '</span>',
+						'menu_id'        => 'main-menu',
+						'menu_class'     => 'MainMenu'
+					) );
+					?>
+			<?php endif; ?>
+
+			<ul class="MainMenu">
+
+				<li class="MainMenuItem">
+
+					<a href="#" class="MainMenuItem-select-area">
+
+						<span class="MainMenuItem-title">PDV</span>
+
 					</a>
-				</div><!-- .header-image -->
-			<?php endif; // End header image check. ?>
-		</header><!-- .site-header -->
 
-		<div id="content" class="site-content">
+					<ul class="MainSubMenu">
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Varejo</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Moda</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Atacado</span>
+
+							</a>
+
+						</li>
 
 
-			<?php
+					</ul>
 
-				$newsArgs = array( 'post_type' => 'softwares', 'posts_per_page' => 4);
+				</li>
 
-				$newsLoop = new WP_Query( $newsArgs );
+				<li class="MainMenuItem">
 
-				while ( $newsLoop->have_posts() ) : $newsLoop->the_post();              ?>
-				<div class="news">
-					<header class="entry-header">
-						<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-					</header>
-					<p><?php the_content(); ?></p>
-					<p><?php echo get_the_term_list( $post->ID, 'softwares_category', 'Categorias: ', ' '); ?></p>
-					<p>Retornando o campo personalizado: <?php echo get_post_meta($post->ID, 'valor_meta', true); ?></p>
-				</div>
+					<a href="#" class="MainMenuItem-select-area">
 
-			<?php endwhile; ?>
+						<span class="MainMenuItem-title">Saúde</span>
+
+					</a>
+
+				</li>
+
+				<li class="MainMenuItem">
+
+					<a href="#" class="MainMenuItem-select-area">
+
+						<span class="MainMenuItem-title">Industria</span>
+
+					</a>
+
+					<ul class="MainSubMenu">
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Agroindustria</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Manufatura</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Alimenticio</span>
+
+							</a>
+
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="MainMenuItem">
+
+					<a href="#" class="MainMenuItem-select-area">
+
+						<span class="MainMenuItem-title">Serviços</span>
+
+					</a>
+
+					<ul class="MainSubMenu">
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Mecânica</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Jurídico</span>
+
+							</a>
+
+						</li>
+
+						<li class="MainSubMenuItem">
+
+							<a href="#" class="MainSubMenuItem-select-area">
+
+								<span class="MainSubMenuItem-title">Arquitetura</span>
+
+							</a>
+
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="MainMenuItem">
+
+					<a href="#" class="MainMenuItem-select-area">
+
+						<span class="MainMenuItem-title">Logística</span>
+
+					</a>
+
+					<ul class="MainSubMenu">
+
+						<li class="MainSubMenuItem"></li>
+
+					</ul>
+
+				</li>
+
+			</ul>
+
+		</nav>
+
+		<div class="MainSearchHold">
+
+			<div class="MainSearchField">
+
+				<?php get_search_form(); ?>
+
+				<label for="MainSearchInput"></label>
+				<input type="text" id="MainSearchInput" class="MainSearchInput" placeholder="Digite um tipo de software para ser localizado">
+
+			</div>

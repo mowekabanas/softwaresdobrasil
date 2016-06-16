@@ -1,0 +1,60 @@
+
+/* Header */
+
+.Header {
+	width: 12em;
+	position: fixed;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+ 	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.HeaderLogo {
+	display: flex;
+	height: 6em;
+}
+
+.HeaderLogo .Logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.HeaderLogo .Logo img {
+	display: block;
+	max-height: 3.75em;
+}
+
+.HeaderMenu {
+	display: flex;
+	flex-flow: column;
+}
+
+.HeaderMenuItem {
+	display: flex;
+}
+
+.HeaderMenuItem-select-area {
+	align-items: center;
+	display: flex;
+	border-bottom: solid 1px #eeeeee;
+	padding: 1.3125em 0 1.5em 1.5em;
+	width: 100%;
+}
+
+.HeaderMenuItem:first-of-type .HeaderMenuItem-select-area {
+	border-top: solid 1px #eeeeee;
+}
+
+.HeaderMenuItem-select-area:hover {
+	background-color: #eeeeee;
+}
+
+.HeaderMenuItem-title {
+	color: #616161;
+	font-size: 1.3125em;
+}
