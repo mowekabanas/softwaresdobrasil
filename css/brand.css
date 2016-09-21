@@ -1,0 +1,28 @@
+
+/* Brand */
+
+.Brand {
+	-webkit-align-items: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+/* Brand logo */
+
+.Brand-logo {
+	margin-right: 1em;
+}
+
+@media (min-width: 48em) {
+
+	/* Brand logo */
+
+	.Brand-logo {
+		margin-right: 1em;
+	}
+
+}

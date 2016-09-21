@@ -1,0 +1,78 @@
+
+/* Header Search */
+
+.HeaderSearch {
+	height: 100%;
+	position: relative;
+}
+
+/* Header Search inner */
+
+.HeaderSearch-inner {
+	-webkit-align-items: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+/* Header Search field */
+
+.HeaderSearch-field {
+	background: none;
+	border: none;
+	border-radius: 0;
+	color: #ffffff;
+	font-size: 1em;
+	padding: 1em 0 .5em 0;
+	width: 100%;
+}
+
+/* Header Search form */
+
+.HeaderSearch-form {
+	-webkit-align-items: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	width: 100%;
+}
+
+/* Header Search submit button */
+
+.HeaderSearch-submitButton {
+	background-color: transparent;
+	border-radius: 2px;
+	color: #ffffff;
+	border: none;
+	height: 2.25em;
+	margin: 0 .5em;
+	padding: 0 .5em;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+
+.HeaderSearch-submitButton:hover {
+	background-color: #009688;
+}
+
+.HeaderSearch-submitButton > span {
+	font-size: 1em;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.HeaderSearch-icon {
+	font-size: 1.5em;
+}

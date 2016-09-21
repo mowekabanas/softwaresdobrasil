@@ -1,0 +1,392 @@
+/*!
+ * Villa DSS.JS v1.0.0 (http://getvilla.org/)
+ * Copyright 2013-2015 Noibe Developers
+ * Licensed under MIT (https://github.com/noibe/villa/blob/master/LICENSE)
+ */
+/* Brand */
+
+.Brand {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Brand logo */
+
+.Brand-logo {
+  margin-right: 1em;
+}
+
+@media (min-width: 48em) {
+  /* Brand logo */
+
+  .Brand-logo {
+    margin-right: 1em;
+  }
+}
+
+/* Header Search */
+
+.HeaderSearch {
+  height: 100%;
+  position: relative;
+}
+
+/* Header Search inner */
+
+.HeaderSearch-inner {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+/* Header Search field */
+
+.HeaderSearch-field {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 1em;
+  padding: 1em 0 .5em 0;
+  width: 100%;
+}
+
+/* Header Search form */
+
+.HeaderSearch-form {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+
+/* Header Search submit button */
+
+.HeaderSearch-submitButton {
+  background-color: transparent;
+  border-radius: 2px;
+  color: #ffffff;
+  border: none;
+  height: 2.25em;
+  margin: 0 .5em;
+  padding: 0 .5em;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.HeaderSearch-submitButton:hover {
+  background-color: #009688;
+}
+
+.HeaderSearch-submitButton > span {
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.HeaderSearch-icon {
+  font-size: 1.5em;
+}
+/* Header */
+
+.Header {
+  width: 100%;
+  min-height: 6em;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.Header-background {
+  background-color: #00897b;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.Header-inner {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  height: 100%;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 1em;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 48em) {
+  /* Header */
+
+  .Header {
+    margin-bottom: 2.25em;
+  }
+}
+/* Logo */
+
+.Logo {
+  height: 3em;
+}
+
+/* Logo svg */
+
+.Logo svg {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Logo select area */
+
+.Logo-select-area {
+  height: 100%;
+  width: 100%;
+}
+
+/* Logo inner */
+
+.Logo-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+#SDBLogoMain {
+  fill: #ffffff;
+  -webkit-transition: fill .6s;
+  -moz-transition: fill .6s;
+  -ms-transition: fill .6s;
+  -o-transition: fill .6s;
+  transition: fill .6s;
+}
+
+.Logo:hover #SDBLogoMain {
+  fill: #fdd835;
+}
+
+#SDBLogoTypo {
+  fill: transparent;
+}
+
+@media (min-width: 48em) {
+  /* Logo */
+
+  .Logo {
+    height: 3.75em;
+  }
+
+  /* Logo svg */
+
+  .Logo svg {
+    display: block;
+  }
+}
+/* Main */
+
+.Main {
+  top: 0;
+  left: 0;
+  position: relative;
+  /*padding-left: 12em;*/
+  width: 100%;
+}
+
+/* Main h1, h2 */
+
+.Main h1,
+.Main h2 {
+  color: #004d40;
+}
+
+.Main h2 a:hover {
+  color: #00796b;
+}
+
+.Main-background {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.Main-inner {
+  padding: 0 1em;
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.Main-inner.container {
+  width: 100%;
+  max-width: 36em;
+}
+
+@media (min-width: 48em) {
+  /* Main h1 */
+
+  .Main h1 {
+    font-size: 3em;
+  }
+}
+
+
+@font-face {
+  font-family: 'sdb';
+  src: url("../font/sdb.eot?17073958");
+  src: url("../font/sdb.eot?17073958#iefix") format('embedded-opentype'),
+       url("../font/sdb.woff2?17073958") format('woff2'),
+       url("../font/sdb.woff?17073958") format('woff'),
+       url("../font/sdb.ttf?17073958") format('truetype'),
+       url("../font/sdb.svg?17073958#sdb") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'sdb';
+    src: url('../font/sdb.svg?17073958#sdb') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "sdb";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-search:before {
+  content: '\e800';
+}
+
+/* '' */
+/* Software Item */
+
+.SoftwareItem {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+/* Software Item h2 */
+
+.SoftwareItem h2 {
+  font-size: 1.5em;
+}
+
+/* Software Item inner */
+
+.SoftwareItem-inner {
+  background-color: #eeeeee;
+  padding: 1em 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.SoftwareItem:hover .SoftwareItem-inner {
+  background-color: #f5f5f5;
+}
+
+/* Software Item inner */
+
+.SoftwareItem-inner {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 1em;
+}
+
+@media (min-width: 48em) {
+  /* Software Item h2 */
+
+  .SoftwareItem h2 {
+    font-size: 1.5em;
+  }
+}
+/* Title */
+
+
+
+/* Title h1 */
+
+.Title h1 {
+  color: #ffffff;
+  font-size: 1.125em;
+  line-height: 1.1;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (min-width: 48em) {
+  /* Title h1 */
+
+  .Title h1 {
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+}

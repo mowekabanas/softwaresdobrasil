@@ -1,0 +1,63 @@
+
+/* Logo */
+
+.Logo {
+	height: 3em;
+}
+
+/* Logo svg */
+
+.Logo svg {
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+
+/* Logo select area */
+
+.Logo-select-area {
+	height: 100%;
+	width: 100%;
+}
+
+/* Logo inner */
+
+.Logo-inner {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+#SDBLogoMain {
+	fill: #ffffff;
+	-webkit-transition: fill .6s;
+	-moz-transition: fill .6s;
+	-ms-transition: fill .6s;
+	-o-transition: fill .6s;
+	transition: fill .6s;
+}
+
+.Logo:hover #SDBLogoMain {
+	fill: #fdd835;
+}
+
+#SDBLogoTypo {
+	fill: transparent;
+}
+
+@media (min-width: 48em) {
+
+	/* Logo */
+
+	.Logo {
+		height: 3.75em;
+	}
+
+	/* Logo svg */
+
+	.Logo svg {
+		display: block;
+	}
+
+}

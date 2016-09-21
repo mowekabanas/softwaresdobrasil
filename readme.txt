@@ -1,5 +1,5 @@
-=== Twenty Sixteen ===
-Contributors: the WordPress team
+=== Softwares do Brasil ===
+Contributors: Elbit Team
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.5
 Version: 1.2

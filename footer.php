@@ -49,11 +49,19 @@
 					do_action( 'twentysixteen_credits' );
 				?>
 				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentysixteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentysixteen' ), 'WordPress' ); ?></a>
+<!--				<a href="--><?php //echo esc_url( __( 'https://wordpress.org/', 'twentysixteen' ) ); ?><!--">--><?php //printf( __( 'Proudly powered by %s', 'twentysixteen' ), 'WordPress' ); ?><!--</a>-->
 			</div><!-- .site-info -->
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
 </div><!-- .site -->
+
+<script src="<?php echo get_template_directory_uri() ?>/dist/js/softwaresdobrasil.js"></script>
+
+<script>
+
+	var logo = new Logo(document.getElementById('logo'), '<?php echo get_template_directory_uri() ?>/img/SDBLogo.svg', false);
+
+</script>
 
 <?php wp_footer(); ?>
 </body>

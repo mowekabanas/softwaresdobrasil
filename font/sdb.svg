@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="sdb" horiz-adv-x="1000" >
+<font-face font-family="sdb" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="search" unicode="&#xe800;" d="M397 266c103 0 187 84 187 188s-84 187-187 187-188-84-188-187 84-188 188-188z m250 0l207-207-63-63-207 208v33l-12 11c-47-41-109-64-175-64-151 0-272 119-272 270s121 271 272 271 269-121 269-271c0-67-23-129-64-176l11-12h34z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

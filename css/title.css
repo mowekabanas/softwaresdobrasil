@@ -1,0 +1,27 @@
+
+/* Title */
+
+.Title {
+
+}
+
+/* Title h1 */
+
+.Title h1 {
+	color: #ffffff;
+	font-size: 1.125em;
+	line-height: 1.1;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+@media (min-width: 48em) {
+
+	/* Title h1 */
+
+	.Title h1 {
+		font-size: 1.5em;
+		font-weight: 500;
+	}
+
+}

@@ -21,61 +21,55 @@
 <?php endif; ?>
 <?php wp_head(); ?>
 
-<body class="grey">
+<body class="grey-50">
 
-<header class="Header white">
+<header class="Header">
 
-	<div class="HeaderLogo grey-200">
+	<div class="Header-background"></div>
 
-		<div class="Logo Logo--header">
+	<div class="Header-inner">
 
-			<img src="<?php echo get_template_directory_uri() ?>/img/logo.png" alt="">
+		<div class="Brand Header-brand">
+
+				<div class="Logo Brand-logo">
+
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="Logo-selectArea">
+
+						<div id="logo" class="Logo-inner"></div>
+
+					</a>
+
+				</div>
+
+				<div class="Title Brand-title">
+
+					<h1>
+
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="Title-selectArea"><?php bloginfo( 'name' ); ?></a>
+
+					</h1>
+
+				</div>
 
 		</div>
 
+		<?php get_search_form(); ?>
+
 	</div>
-
-	<nav class="HeaderNav">
-
-		<ul class="HeaderMenu">
-
-			<li class="HeaderMenuItem">
-
-				<a href="<?php echo get_home_url(); ?>" class="HeaderMenuItem-select-area">
-
-					<span class="HeaderMenuItem-title">Softwares</span>
-
-				</a>
-
-			</li>
-
-			<li class="HeaderMenuItem">
-
-				<a href="#" class="HeaderMenuItem-select-area">
-
-					<span class="HeaderMenuItem-title">Sobre</span>
-
-				</a>
-
-			</li>
-
-		</ul>
-
-	</nav>
 
 </header>
 
 <main class="Main">
 
-	<div class="Main-background grey-200"></div>
+	<div class="Main-background"></div>
 
-	<div class="Main-inner">
+	<div class="Main-inner container">
 
-		<nav class="MainNav" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentysixteen' ); ?>">
+		<!--<nav class="MainNav" role="navigation" aria-label="<?php /*esc_attr_e( 'Social Links Menu', 'twentysixteen' ); */?>">
 
-			<?php if ( has_nav_menu( 'main' ) ) : ?>
+			<?php /*if ( has_nav_menu( 'main' ) ) : */?>
 					<?php
-					wp_nav_menu( array(
+/*					wp_nav_menu( array(
 						'theme_location' => 'main',
 						'depth'          => 1,
 						'link_before'    => '<span class="MainMenuItem-title">',
@@ -83,8 +77,8 @@
 						'menu_id'        => 'main-menu',
 						'menu_class'     => 'MainMenu'
 					) );
-					?>
-			<?php endif; ?>
+					*/?>
+			<?php /*endif; */?>
 
 			<ul class="MainMenu">
 
@@ -249,15 +243,4 @@
 
 			</ul>
 
-		</nav>
-
-		<div class="MainSearchHold">
-
-			<div class="MainSearchField">
-
-				<?php get_search_form(); ?>
-
-				<label for="MainSearchInput"></label>
-				<input type="text" id="MainSearchInput" class="MainSearchInput" placeholder="Digite um tipo de software para ser localizado">
-
-			</div>
+		</nav>-->
