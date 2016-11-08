@@ -45,7 +45,9 @@ get_header(); ?>
 	endwhile;
 	?>
 
-</main><!-- .site-main -->
+</main><!-- .Main -->
+
+</div><!-- .Main-wrapper -->
 
 <?php //get_sidebar( 'content-bottom' ); ?>
 

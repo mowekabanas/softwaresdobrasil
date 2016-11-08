@@ -105,8 +105,9 @@ get_header(); ?>
 				endwhile;
 			?>
 
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+		</main><!-- .Main -->
+
+	</div><!-- .Main-wrapper -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

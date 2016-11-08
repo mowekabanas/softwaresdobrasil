@@ -571,8 +571,8 @@ function software_price_box_save( $post_id ) {
 add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
 
 function add_my_post_types_to_query( $query ) {
-	if ( is_home() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'post', 'page', 'softwares') );
+	if ( $query->is_main_query() )
+		$query->set( 'post_type', array( 'post', 'softwares') );
 	return $query;
 }
 

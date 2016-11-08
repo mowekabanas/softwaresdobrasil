@@ -3,6 +3,89 @@
  * Copyright 2013-2015 Noibe Developers
  * Licensed under MIT (https://github.com/noibe/villa/blob/master/LICENSE)
  */
+/* Aside */
+
+.Aside {
+  /*display: none;*/
+  position: fixed;
+  height: 100vh;
+  width: 16em;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.Aside-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.Aside-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.Aside-menu {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.Aside-header {
+  border-bottom: solid 1px #eeeeee;
+  display: block;
+}
+
+.Aside-header a {
+  color: #212121;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 1em 1em 1em 1.5em;
+}
+
+.Aside-header a:hover {
+  background-color: #eeeeee;
+}
+
+.Aside-header a img {
+  display: block;
+  max-height: 2.25em;
+}
+
+.Aside-header a span {
+  margin-left: 1em;
+  font-size: .75em;
+  font-weight: 900;
+}
+
+.Aside-footer {
+  color: #212121;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  border-top: solid 1px #eeeeee;
+  padding: 1em 1em 1em 1.5em;
+}
+
+.Aside-footer span {
+  margin-left: 1em;
+  font-size: .875em;
+  font-weight: 400;
+}
 /* Brand */
 
 .Brand {
@@ -34,6 +117,7 @@
 .HeaderSearch {
   height: 100%;
   position: relative;
+  width: 100%;
 }
 
 /* Header Search inner */
@@ -106,13 +190,31 @@
 .HeaderSearch-icon {
   font-size: 1.5em;
 }
+
+@media (min-width: 48em) {
+  /* Header Search */
+
+  .HeaderSearch {
+    width: auto;
+  }
+}
 /* Header */
 
+.Header-wrapper {
+  padding-left: 16em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
 .Header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   width: 100%;
   min-height: 6em;
   position: relative;
-  margin-bottom: 1em;
 }
 
 .Header-background {
@@ -250,6 +352,12 @@
   max-width: 36em;
 }
 
+.Main-wrapper {
+  padding-left: 16em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
 @media (min-width: 48em) {
   /* Main h1 */
 
@@ -257,6 +365,79 @@
     font-size: 3em;
   }
 }
+
+/* Menu */
+
+
+
+.Menu {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+}
+
+/* Menu a */
+
+.Menu a {
+  display: block;
+  font-size: 13px;
+  font-stretch: normal;
+  font-weight: 400;
+  padding: 1rem 1rem 1rem 1.5rem;
+  width: 100%;
+}
+
+.Menu a:hover {
+  background-color: #eeeeee;
+}
+
+.Menu dt a {
+  font-weight: 700;
+}
+
+.Menu dt a.is-active {
+  color: #004d40;
+}
+
+.Menu dd a {
+  padding-left: 2.25rem;
+}
+
+.Menu dd a.is-active {
+  color: #009688;
+  font-weight: 700;
+}
+
+/* Menu dl */
+
+.Menu dl {
+  display: block;
+  width: 100%;
+}
+
+/* Menu dt */
+
+.Menu dt {
+  display: block;
+  width: 100%;
+}
+
+/* Menu dd */
+
+.Menu dd {
+  display: block;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  width: 100%;
+}
+
+
+
+
 
 
 @font-face {
@@ -370,7 +551,9 @@
 }
 /* Title */
 
-
+.Title {
+  padding: 1em;
+}
 
 /* Title h1 */
 
@@ -386,7 +569,7 @@
   /* Title h1 */
 
   .Title h1 {
-    font-size: 1.5em;
+    font-size: 2.25em;
     font-weight: 500;
   }
 }

@@ -12,7 +12,7 @@ get_header(); ?>
 <?php if ( have_posts() ) : ?>
 
 	<header class="page-header">
-		<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentysixteen' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+		<p class="page-title" style="margin-bottom: 1em"><?php printf( __( 'Search Results for: %s', 'twentysixteen' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></p>
 	</header><!-- .page-header -->
 
 	<?php
@@ -43,6 +43,8 @@ else :
 endif;
 ?>
 
-</main><!-- .site-main -->
+</main><!-- .Main -->
+
+</div><!-- .Main-wrapper -->
 
 <?php get_footer(); ?>

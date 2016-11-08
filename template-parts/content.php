@@ -15,6 +15,14 @@
 	<div class="SoftwareItem-inner">
 
 		<header class="SoftwareItem-header">
+
+			<?php
+
+//			var_dump($post);
+
+			print_r(get_the_term_list($post->ID, 'softwares_category'));
+
+			?>
 			<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 				<span class="sticky-post"><?php _e( 'Featured', 'twentysixteen' ); ?></span>
 			<?php endif; ?>

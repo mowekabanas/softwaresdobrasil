@@ -41,6 +41,12 @@
 	max-width: 36em;
 }
 
+.Main-wrapper {
+	padding-left: 16em;
+	margin-bottom: 1em;
+	width: 100%;
+}
+
 @media (min-width: 48em) {
 
 	/* Main h1 */

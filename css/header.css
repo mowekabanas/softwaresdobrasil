@@ -1,11 +1,21 @@
 
 /* Header */
 
+.Header-wrapper {
+	padding-left: 16em;
+	margin-bottom: 1em;
+	width: 100%;
+}
+
 .Header {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
 	width: 100%;
 	min-height: 6em;
 	position: relative;
-	margin-bottom: 1em;
 }
 
 .Header-background {

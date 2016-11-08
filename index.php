@@ -52,6 +52,8 @@ else :
 endif;
 ?>
 
-</main>
+</main><!-- .Main -->
+
+</div><!-- .Main-wrapper -->
 
 <?php get_footer(); ?>

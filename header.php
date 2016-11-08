@@ -17,29 +17,21 @@
 <script src="<?php echo get_template_directory_uri() ?>/dist/js/villa.min.js"></script>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php endif; ?>
 <?php wp_head(); ?>
 
 <body class="grey-50">
 
-<header class="Header">
+<div class="Header-wrapper">
 
-	<div class="Header-background"></div>
+	<header class="Header">
 
-	<div class="Header-inner">
+		<div class="Header-background"></div>
 
-		<div class="Brand Header-brand">
+		<div class="Header-inner">
 
-				<div class="Logo Brand-logo">
-
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="Logo-selectArea">
-
-						<div id="logo" class="Logo-inner"></div>
-
-					</a>
-
-				</div>
+			<div class="Brand Header-brand">
 
 				<div class="Title Brand-title">
 
@@ -47,200 +39,139 @@
 
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="Title-selectArea"><?php bloginfo( 'name' ); ?></a>
 
+						<?php
+
+							// descobre se a query atual é uma taxonomia
+							if (is_tax()) {
+
+								$current_term = get_queried_object();
+
+								echo ' - ' . $current_term->name;
+
+							}
+
+						?>
+
 					</h1>
 
 				</div>
 
+			</div>
+
+			<?php get_search_form(); ?>
+
 		</div>
 
-		<?php get_search_form(); ?>
+	</header>
+
+</div>
+
+<aside class="Aside">
+
+	<div class="Aside-background white"></div>
+
+	<div class="Aside-inner">
+
+		<header class="Aside-header">
+
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+
+				<img src="<?php echo get_template_directory_uri() ?>/img/SDBLogo.png" alt="">
+
+				<span>Softwares do Brasil</span>
+
+			</a>
+
+		</header>
+
+		<nav class="Menu Aside-menu">
+
+			<?php
+
+			// descobre se a query atual é uma taxonomia
+			if (is_tax())
+				$current_term = get_queried_object();
+
+			$terms = get_terms( array(
+				'taxonomy' => 'softwares_category',
+				'hide_empty' => false,
+			) );
+
+
+			foreach ($terms as $term) {
+
+				if ($term->parent == 0) {
+
+					$term_active_class = '';
+
+					if (isset($current_term))
+						if ($current_term->term_id == $term->term_id)
+							$term_active_class = 'class="is-active"';
+
+					echo '<dl>';
+
+					echo '<dt>';
+
+					echo '<a href="' . get_term_link($term) . '"' . $term_active_class . ' >';
+
+					echo $term->name;
+
+					echo '</a>';
+
+					echo '</dt>';
+
+					echo '<dd>';
+
+					$term_children = get_terms( array(
+						'parent' => $term->term_id,
+						'taxonomy' => 'softwares_category',
+						'hide_empty' => false,
+					) );
+
+					foreach ($term_children as $term_child) {
+
+						if (isset($current_term))
+							if ($current_term->term_id == $term_child->term_id)
+								$term_child_active_class = 'class="is-active"';
+
+//						echo $term_child->slug;
+
+						echo '<a href="' . get_term_link($term_child) . '" ' . $term_child_active_class . '>';
+						echo $term_child->name;
+						echo '</a>';
+
+						$term_child_active_class = '';
+
+					}
+
+					echo '</dd>';
+
+					echo '</dl>';
+
+					$term_active_class = '';
+
+				}
+
+			}
+
+			?>
+
+		</nav>
+
+		<footer class="Aside-footer">
+
+			<span>Softwares do Brasil ® <br>Todos direitos reservados</span>
+
+		</footer>
 
 	</div>
 
-</header>
+</aside>
+
+<div class="Main-wrapper">
 
 <main class="Main">
 
 	<div class="Main-background"></div>
 
 	<div class="Main-inner container">
-
-		<!--<nav class="MainNav" role="navigation" aria-label="<?php /*esc_attr_e( 'Social Links Menu', 'twentysixteen' ); */?>">
-
-			<?php /*if ( has_nav_menu( 'main' ) ) : */?>
-					<?php
-/*					wp_nav_menu( array(
-						'theme_location' => 'main',
-						'depth'          => 1,
-						'link_before'    => '<span class="MainMenuItem-title">',
-						'link_after'     => '</span>',
-						'menu_id'        => 'main-menu',
-						'menu_class'     => 'MainMenu'
-					) );
-					*/?>
-			<?php /*endif; */?>
-
-			<ul class="MainMenu">
-
-				<li class="MainMenuItem">
-
-					<a href="#" class="MainMenuItem-select-area">
-
-						<span class="MainMenuItem-title">PDV</span>
-
-					</a>
-
-					<ul class="MainSubMenu">
-
-						<li class="MainSubMenuItem">
-
-							<a href="#" class="MainSubMenuItem-select-area">
-
-								<span class="MainSubMenuItem-title">Varejo</span>
-
-							</a>
-
-						</li>
-
-						<li class="MainSubMenuItem">
-
-							<a href="#" class="MainSubMenuItem-select-area">
-
-								<span class="MainSubMenuItem-title">Moda</span>
-
-							</a>
-
-						</li>
-
-						<li class="MainSubMenuItem">
-
-							<a href="#" class="MainSubMenuItem-select-area">
-
-								<span class="MainSubMenuItem-title">Atacado</span>
-
-							</a>
-
-						</li>
-
-
-					</ul>
-
-				</li>
-
-				<li class="MainMenuItem">
-
-					<a href="#" class="MainMenuItem-select-area">
-
-						<span class="MainMenuItem-title">Saúde</span>
-
-					</a>
-
-				</li>
-
-				<li class="MainMenuItem">
-
-					<a href="#" class="MainMenuItem-select-area">
-
-						<span class="MainMenuItem-title">Industria</span>
-
-					</a>
-
-					<ul class="MainSubMenu">
-
-						<li class="MainSubMenuItem">
-
-							<a href="#" class="MainSubMenuItem-select-area">
-
-								<span class="MainSubMenuItem-title">Agroindustria</span>
-
-							</a>
-
-						</li>
-
-						<li class="MainSubMenuItem">
-
-							<a href="#" class="MainSubMenuItem-select-area">
-
-								<span class="MainSubMenuItem-title">Manufatura</span>
-
-							</a>
-
-						</li>
-
-						<li class="MainSubMenuItem">
-
-							<a href="#" class="MainSubMenuItem-select-area">
-
-								<span class="MainSubMenuItem-title">Alimenticio</span>
-
-							</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="MainMenuItem">
-
-					<a href="#" class="MainMenuItem-select-area">
-
-						<span class="MainMenuItem-title">Serviços</span>
-
-					</a>
-
-					<ul class="MainSubMenu">
-
-						<li class="MainSubMenuItem">
-
-							<a href="#" class="MainSubMenuItem-select-area">
-
-								<span class="MainSubMenuItem-title">Mecânica</span>
-
-							</a>
-
-						</li>
-
-						<li class="MainSubMenuItem">
-
-							<a href="#" class="MainSubMenuItem-select-area">
-
-								<span class="MainSubMenuItem-title">Jurídico</span>
-
-							</a>
-
-						</li>
-
-						<li class="MainSubMenuItem">
-
-							<a href="#" class="MainSubMenuItem-select-area">
-
-								<span class="MainSubMenuItem-title">Arquitetura</span>
-
-							</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="MainMenuItem">
-
-					<a href="#" class="MainMenuItem-select-area">
-
-						<span class="MainMenuItem-title">Logística</span>
-
-					</a>
-
-					<ul class="MainSubMenu">
-
-						<li class="MainSubMenuItem"></li>
-
-					</ul>
-
-				</li>
-
-			</ul>
-
-		</nav>-->
